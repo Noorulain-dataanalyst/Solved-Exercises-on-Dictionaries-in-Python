@@ -1,0 +1,26 @@
+student = {'name': 'Alice', 'grade': 'A', 'age': 20}
+                           #Retrieve all keys.
+print(student.keys())
+                         #Retrieve all values.
+print(student.values())
+                      #Retrieve all key-value pairs.
+print(student.items())
+               #Use the get() method to retrieve the value of 'grade' in the student dictionary.
+print(student.get('grade'))
+              #What will happen if you use get('gender') on the student dictionary, and why?
+print(student.get('gender'))
+      #Write a Python loop to print all the keys in the dictionary {'a': 1, 'b': 2, 'c': 3}.
+dic={
+    'a':1,
+    'b':2,
+    'c':3
+}
+for keys,values in dic.items():
+    print(f"{keys}:{values}")
+          #Check if the key 'name' exists in the dictionary employee = {'id': 101, 'salary': 50000}.
+employee = {'id': 101, 'salary': 50000}
+if 'name' in employee:
+    print("yes it exist")
+else:
+    print("not exist")
+
