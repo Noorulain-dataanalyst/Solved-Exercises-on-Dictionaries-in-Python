@@ -1,0 +1,42 @@
+myfav={
+    'fruit': 'apple',
+    'color': 'red',
+    'price': 10.}
+#Add a new key 'size': 'medium' to the dictionary {'fruit': 'apple', 'color': 'red'}.
+myfav['size']='medium'
+
+#Change the value of 'price' to 15 in the dictionary {'fruit': 'apple', 'color': 'red', 'price': 10}.
+myfav['price']=10
+print(myfav)
+myfav={
+    'fruit': 'apple',
+    'color': 'red',
+    'price': 10.}
+#Add a new key 'size': 'medium' to the dictionary {'fruit': 'apple', 'color': 'red'}.
+myfav['size']='medium'
+
+#Change the value of 'price' to 15 in the dictionary {'fruit': 'apple', 'color': 'red', 'price': 10}.
+myfav['price']=10
+print(myfav)
+#Delete the key 'color' from the dictionary {'fruit': 'apple', 'color': 'red'}.
+del myfav['color']
+#What happens if you try to delete a key that doesn’t exist in a dictionary?
+del myfav['age']
+#Traceback (most recent call last):
+ # File "<main.py>", line 14, in <module>
+#KeyError: 'age'
+#Create a dictionary with the following data:
+intro={
+'name': 'John',
+'age': 28,
+'city': 'London'}
+#Access the value of 'city' in the dictionary you just created.
+print(intro['city'])
+
+#Write code to add a new key-value pair 'job': 'Engineer' to the dictionary.
+intro['job']='Engineer'
+#Update the value of 'age' to 30.
+intro['age']=30
+#Remove the key 'city' from the dictionary.
+intro.pop('city')
+print(intro)
