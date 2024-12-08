@@ -1,0 +1,75 @@
+                        ########a)######## 
+Create a dictionary to store information about a person (name, age, city, hobbies).
+info={
+    'name':'noorulain',
+    'age':19,
+    'city':'riawind',
+    'hobbies':['art and craft','poetry']
+}
+                         ######b)########
+Write a program to count the frequency of words in a given text.
+text=[7,2,38,7,3,8,3,7,1,9,0,1,'ya','ya']
+frequency = {element: text.count(element)
+for element in text}
+print(frequency)
+                        #######c########) 
+Implement a simple inventory system using dictionaries.
+inv={
+    'apples':23,
+    'mango':12,
+    'pear':6
+}
+print("your inventry is dispalyed here press your respected number and access it")
+print('1-view inventry')
+print('2-add another item')
+print('3-add quantity of existing item')
+print('4-remove items')
+choice=int(input("enter your respected target"))
+while True:
+    if choice==1:
+        print('your current inventry is:',inv)
+        break
+    elif choice==2:
+        item=input("enter an item")
+        quantity=int(input("enter quantity"))
+        inv[item]=quantity
+        print(inv)
+        break
+    elif choice ==3:
+        print("enter the item name to update")
+        item=input("enter an item:")
+        print("enter quantity")
+        quantity=int(input("enter quantity"))
+        if item in inv:
+            inv[item]=quantity 
+            print(inv)
+        else:
+            print("item not found")
+        break  
+   
+    else:
+        item=int(input('enter item you wants to del'))
+        del inv[item]
+        print(inv)
+          #######d###########
+ Analyze a dataset of customer orders to find the most popular product category.
+sold_products={
+    'apples':22,
+    'mango':37,
+    'pear':12
+}
+maximum_sales=max(sold_products.values())
+for product,value in sold_products.items():
+    if value== maximum_sales:
+        print("maximum sales are of the fruit:",product)
+          ########e)#######
+Create a dictionary to store student grades and calculate the average grade
+marks ={
+    'english':77,
+    'urdu':88,
+    'math':100
+}
+total_marks=sum(marks.values())
+total_len=len(marks.values())
+average=total_marks/total_len
+print(average)
