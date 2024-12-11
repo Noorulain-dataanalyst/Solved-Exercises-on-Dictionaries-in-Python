@@ -110,3 +110,93 @@ highest_grade = max(student['sub1'] for student in std_info)
 lowest_grade=min(student['sub1'] for student in std_info)
 print("highest grade",'=',highest_grade)
 print("lowest grade",'=',lowest_grade)
+           ##########h########
+     # Store product information
+store_inventory = [
+    {'name': 'shampoo', 'price': 130, 'quantity': 15},
+    {'name': 'soap', 'price': 50, 'quantity': 30},
+    {'name': 'toothpaste', 'price': 75, 'quantity': 20}]
+# Shopping cart to store user selections
+shopping_cart = []
+while True:
+    print("\n1. Display Products")
+    print("2. Add to Cart")
+    print("3. Remove from Cart")
+    print("4. View Cart")
+    print("5. Checkout")
+    print("6. Exit")
+    choice = input("Enter your choice: ")
+    if choice == '1':
+        # Display available products
+        print("\nAvailable Products:")
+        for product in store_inventory:
+            print(f"{product['name']} - Price: {product['price']} - Quantity: {product['quantity']}")
+
+    elif choice == '2':
+        # Add a product to the cart
+        product_name = input("Enter the product name to add: ")
+        quantity = int(input("Enter the quantity: "))
+        found = False
+        for product in store_inventory:
+            if product['name'] == product_name:
+                found = True
+                if product['quantity'] >= quantity:
+                    shopping_cart.append({'name': product_name, 'price': product['price'], 'quantity': quantity})
+                    product['quantity'] -= quantity
+                    print(f"Added {quantity} {product_name}(s) to the cart.")
+                else:
+                    print(f"Sorry, only {product['quantity']} {product_name}(s) available.")
+                break
+        if not found:
+            print(f"Product '{product_name}' not found in the inventory.")
+
+    elif choice == '3':
+        # Remove a product from the cart
+        product_name = input("Enter the product name to remove: ")
+        found = False
+        for item in shopping_cart:
+            if item['name'] == product_name:
+                found = True
+                shopping_cart.remove(item)
+                # Return the quantity back to the inventory
+                for product in store_inventory:
+                    if product['name'] == product_name:
+                        product['quantity'] += item['quantity']
+                print(f"Removed {product_name} from the cart.")
+                break
+        if not found:
+            print(f"Product '{product_name}' not found in the cart.")
+
+    elif choice == '4':
+        # View items in the cart
+        print("\nShopping Cart:")
+        if not shopping_cart:
+            print("Your cart is empty.")
+        else:
+            for item in shopping_cart:
+                print(f"{item['name']} - Price: {item['price']} - Quantity: {item['quantity']}")
+
+    elif choice == '5':
+                    # Checkout and calculate total cost with discounts and taxes
+        if not shopping_cart:
+            print("Your cart is empty. Add items before checkout.")
+            continue
+
+        total = sum(item['price'] * item['quantity'] for item in shopping_cart)
+        discount = float(input("Enter discount percentage: "))
+        tax = float(input("Enter tax percentage: "))
+        discount_amount = (total * discount) / 100
+        tax_amount = (total * tax) / 100
+        final_total = total - discount_amount + tax_amount
+
+        print(f"\nCart Total: {total}")
+        print(f"Discount: {discount_amount}")
+        print(f"Tax: {tax_amount}")
+        print(f"Final Total: {final_total}")
+
+    elif choice == '6':
+        print("Thank you for shopping!")
+        break
+
+    else:
+        print("Invalid choice. Please try again.")
