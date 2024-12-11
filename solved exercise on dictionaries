@@ -73,3 +73,40 @@ total_marks=sum(marks.values())
 total_len=len(marks.values())
 average=total_marks/total_len
 print(average)
+               ############f)#########
+Inventory Management:
+#Create a dictionary to store product information: name, quantity, price.
+prd_info=[
+    {'name':'facewash','quantity':12,'price':120},
+    {'name':'soap','quantity':15,'price':50},
+    {'name':'shampoo','quantity':11,'price':250}]
+                                                #Implement functions to:
+                            #Add new products
+prd_info.append({'name':'conditioner','quantity':4,'price':400})
+print(prd_info)
+                                      #Update product quantities
+for product in prd_info:
+    if product['name']=='facewash':
+        product['quantity']=13 
+        print(prd_info)
+                                      #Calculate total inventory value¶
+total_value=0
+for product in prd_info:
+    total_value+=product['quantity']*product['price']
+print("total inventory is",total_value)
+            ######g###########
+          #Create a dictionary to store student information: name, grades for different subjects.
+std_info=[   
+    {'name':'hania','sub1':98,'sub2':69,'sub3':78},
+    {'name':'maha','sub1':84,'sub2':78,'sub3':90},
+    {'name':'najwa','sub1':78,'sub2':96,'sub3':43}]
+                  #Calculate the average grade for each student.
+for student in std_info:
+    total=student['sub1']+student['sub2']+student['sub3']
+    average=total/3
+    print(average)
+                 #Find the highest and lowest grades in a specific subject.
+highest_grade = max(student['sub1'] for student in std_info)
+lowest_grade=min(student['sub1'] for student in std_info)
+print("highest grade",'=',highest_grade)
+print("lowest grade",'=',lowest_grade)
